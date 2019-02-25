@@ -1,0 +1,45 @@
+{
+  "name": "cordova-plugin-secure-storage-test-app",
+  "version": "0.0.1",
+  "description": "Application that runs tests for cordova-plugin-secure-storage",
+  "author": "Demetris Manikas demetris.manikas@gmail.com",
+  "scripts": {
+    "read-shared-app-create": "./node_modules/cordova/bin/cordova create cordova-plugin-secure-storage-read-shared-app --template read-shared-app-tpl",
+    "read-shared-app-platform-add-android": "cd cordova-plugin-secure-storage-read-shared-app;../node_modules/cordova/bin/cordova platform add android",
+    "read-shared-app-build-android": "cd cordova-plugin-secure-storage-read-shared-app;../node_modules/cordova/bin/cordova build android",
+    "read-shared-app-install": "cd cordova-plugin-secure-storage-read-shared-app;adb install -r platforms/android/app/build/outputs/apk/debug/app-debug.apk",
+
+    "test-app-create": "./node_modules/cordova/bin/cordova create cordova-plugin-secure-storage-test-app --template test-app-tpl",
+
+    "test-app-platform-add-android": "cd cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova platform add android",
+    "test-app-platform-add-ios": "cd cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova platform add ios",
+
+    "test-app-build-android": "cd cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova build android",
+    "test-app-build-ios": "cd  cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova build ios",
+
+    "test-app-emulate-android": "cd  cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova emulate android",
+    "test-app-emulate-ios": "cd  cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova emulate ios",
+
+    "test-app-run-android": "cd  cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova run android",
+    "test-app-run-ios": "cd  cordova-plugin-secure-storage-test-app; ../node_modules/cordova/bin/cordova run ios",
+
+    "init": "npm run read-shared-app-create; npm run test-app-create;",
+
+    "platform-add-android": "npm run read-shared-app-platform-add-android; npm run test-app-platform-add-android",
+    "platform-add-ios": "npm run test-app-platform-add-ios",
+
+    "build-android": "npm run read-shared-app-build-android; npm run test-app-build-android;",
+    "build-ios": "npm run test-app-build-ios;",
+
+    "emulate-android": "npm run test-app-emulate-android;npm run read-shared-app-install",
+    "emulate-ios": "npm run test-app-emulate-android-ios",
+
+    "run-android": "npm run test-app-run-android;npm run read-shared-app-install",
+    "run-ios": "npm run test-app-run-ios"
+
+  },
+  "devDependencies": {
+    "cordova":""
+  },
+  "license": "MIT"
+}

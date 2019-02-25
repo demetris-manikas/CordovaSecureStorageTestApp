@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.crypho.SecureStorageReadSharedValueApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Cordova Plugin Secure Storage Read Shared Value App</name>
+    <description>
+        App that reads a value set by the relevant test suite
+    </description>
+    <plugin name="cordova-plugin-secure-storage" spec="https://github.com/Crypho/com.crypho.plugins.securestorage" />
+    <plugin name="cordova-plugin-secure-storage-tests" spec="plugins/cordova-plugin-secure-storage/tests" />
+</widget>
